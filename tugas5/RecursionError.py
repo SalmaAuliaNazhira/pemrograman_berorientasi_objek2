@@ -13,7 +13,16 @@ if __name__ == '__main__':
         print("The factorial of 1000 is: {}".format(factorial(2000)))
     except RecursionError as re:
         print("Unable to calculate factorial. Number is too big.")
-# 
+        
+# another example of RecursionError
+def recursive_function():
+    recursive_function()
+
+try:
+    recursive_function()
+except RecursionError as e:
+    print("RecursionError:", e)
+
 
 
 
