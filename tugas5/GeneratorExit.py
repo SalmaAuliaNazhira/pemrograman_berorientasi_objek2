@@ -2,14 +2,16 @@
 # NIM     : 210511132
 # Kelas   : R3/TI21C
 
-def my_generator():
-    try: 
-        for i in range(5):
-            print('Yielding', i)
-            yield i
+
+# GeneratorExit
+def generator_function():
+    try:
+        yield 1
+        yield 2
+        yield 3
     except GeneratorExit:
-        print('Exiting early')
-    
-g = my_generator()
-print (g.next())
-g.close
+        print("Generator is being closed")
+
+my_generator = generator_function()
+next(my_generator)
+my_generator.close()
